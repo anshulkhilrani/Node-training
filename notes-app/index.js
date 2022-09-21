@@ -1,18 +1,12 @@
-const express = require('express')
-const passport = require('passport')
-const app = express()
-const GoogleStrategy = require('passport-google-oauth20').Strategy
+const getNotes = require('./notes.js')
 
-const PORT = process.env.PORT || 5000
+const notes = getNotes()
 
-passport.use(new GoogleStrategy())
+console.log(notes)
 
 
+// const add = require('./utils.js')
 
-app.get('/', (req, res) => {
-    res.send({hi: "the"})
-})
+// const sum = add(4 , 2)
 
-app.listen(PORT, () =>{
-    console.log("lmao this works")
-})  
+// console.log(sum)
